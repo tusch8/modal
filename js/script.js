@@ -32,7 +32,7 @@ modalCloses.forEach((modalClose, index) => {
 });
 
 // 背景部分
-modalOverlay.addEventListener('click', e => {
+modalOverlay.addEventListener('click', () => {
 	modalContents.forEach(modalContent => {
 		// 今開いているモーダルは何番目か
 		const isOpen = modalContent.classList.contains('is-open');

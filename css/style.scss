@@ -1,7 +1,3 @@
-iframe {
-	vertical-align: top;
-}
-
 /**
  * Modal
  */
@@ -13,7 +9,7 @@ body {
 	}
 }
 
-// 周りの黒い部分
+// オーバーレイ
 .overlay {
 	opacity: 0;
 	visibility: hidden;
@@ -31,7 +27,7 @@ body {
 	}
 }
 
-// モーダル本体
+// 本体
 .modal {
 	opacity: 0;
 	visibility: hidden;
