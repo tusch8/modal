@@ -11,6 +11,7 @@ body {
 
 // オーバーレイ
 .overlay {
+	
 	opacity: 0;
 	visibility: hidden;
 	position: fixed;
@@ -27,7 +28,7 @@ body {
 	}
 }
 
-// 本体
+// モーダル本体
 .modal {
 	opacity: 0;
 	visibility: hidden;
