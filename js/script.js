@@ -29,7 +29,20 @@ const modal = () => {
 		// モーダル開く
 		if (modalContents.length > index) {
 			modalTrigger.addEventListener('click', () => {
+
+				// 開いているモーダルがあれば閉じる
+				modalContents.forEach(modalContent => {
+					// 今開いているモーダルは何番目か
+					const isOpen = modalContent.classList.contains('is-open');
+					const index = [].slice.call(modalContents).indexOf(modalContent);
+					if (isOpen) {
+						toggleModal(index);
+					}
+				});
+
+				// モーダル開く
 				toggleModal(index);
+
 			});
 		}
 
@@ -55,6 +68,17 @@ const modal = () => {
 		});
 	})
 
+	// モーダルの領域以外かつ、モーダルのトリガー以外をクリックしたとき、モーダル閉じる
+	document.addEventListener('click', e => {
+		if (!e.target.closest('.js-modal') && (e.target.className !== 'js-modal-trigger')) {
+			modalContents.forEach((modalContent, index) => {
+				const isOpen = modalContent.classList.contains('is-open');
+				if (isOpen) {
+					toggleModal(index);
+				}
+			});
+		}
+	});
 
 
 	
@@ -113,8 +137,6 @@ const modal = () => {
 			switchModal(e, 'next');
 		});
 	});
-
-
 
 }
 
